@@ -22,8 +22,8 @@ public class LeaseDao {
 
             statement.setInt(1, leaseContract.getContractId());
             statement.setString(2, leaseContract.getVin());
-            statement.setDate(3, leaseContract.getLeaseStart(); //I'm unsure, will come back to
-            statement.setDate (4, leaseContract.getLeaseEnd(); //I'm unsure, will come back to
+            statement.setDate(3,java.sql.Date.valueOf(leaseContract.getLeaseStart())); //Makes the start lease date into a SQL format so it can be saved in the database
+            statement.setDate (4, java.sql.Date.valueOf(leaseContract.getLeaseEnd()));  //Makes the end lease date into a SQL format so it can be saved in the database
             statement.setDouble(5, leaseContract.getMonthlyPayment());
 
             statement.executeUpdate();
