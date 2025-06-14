@@ -50,7 +50,8 @@ Outline potential future enhancements or functionalities you might consider addi
 
 ## Resources
 
-List resources such as tutorials, articles, or documentation that helped you during the project.
+- https://mkyong.com/jdbc/how-to-insert-date-value-in-preparedstatement/
+- https://www.baeldung.com/java-convert-localdate-sql-date?utm_source=chatgpt.com
 
 - [Java Programming Tutorial](https://www.example.com)
 - [Effective Java](https://www.example.com)
