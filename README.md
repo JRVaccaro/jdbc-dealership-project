@@ -2,9 +2,19 @@
 
 ## Description of the Project
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
+This is a simple Java console application designed to help a car dealership manage its vehicle inventory. It allows users to:
 
+- Search for vehicles by price range, make/model, year, color, mileage, or type
+
+- View the full inventory
+
+- Add new vehicles to the inventory
+
+- Remove vehicles when they are sold
+
+The application uses a MySQL database to store dealership and vehicle data, loading and updating records through SQL queries
 ![Class Diagram](path/to/your/class_diagram.png)
+
 
 ## User Stories
 

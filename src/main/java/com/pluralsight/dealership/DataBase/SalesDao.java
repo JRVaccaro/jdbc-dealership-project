@@ -16,7 +16,6 @@ public class SalesDao {
     }
 
     public void addSalesContract(SalesContract salesContract) {
-        // TODO: Implement the logic to add a sales contract
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(
                      "INSERT INTO sales_contract (contract_id, vin,sale_date, price) VALUES (?,?,?,?)")){
