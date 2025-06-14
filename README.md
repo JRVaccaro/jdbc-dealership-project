@@ -1,4 +1,4 @@
-# Project Title
+# JDBC-Dealership-Project
 
 ## Description of the Project
 

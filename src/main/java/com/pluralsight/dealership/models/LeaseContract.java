@@ -1,4 +1,4 @@
-package com.pluralsight.models;
+package com.pluralsight.dealership.models;
 
 import java.time.LocalDate;
 
@@ -74,3 +74,4 @@ public class LeaseContract {
                 ", monthlyPayment=" + monthlyPayment +
                 '}';
     }
+}

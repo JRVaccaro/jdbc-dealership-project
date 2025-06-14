@@ -1,6 +1,6 @@
-package com.pluralsight.DataBase;
+package com.pluralsight.dealership.DataBase;
 
-import com.yearup.dealership.models.Vehicle;
+import com.pluralsight.dealership.models.Vehicle;
 
 import javax.sql.DataSource;
 import java.sql.*;

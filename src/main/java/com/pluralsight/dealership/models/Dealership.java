@@ -1,4 +1,4 @@
-package com.pluralsight.models;
+package com.pluralsight.dealership.models;
 
 public class Dealership {
     private int dealershipId;
@@ -54,3 +54,4 @@ public class Dealership {
                 ", phone='" + phone + '\'' +
                 '}';
     }
+}

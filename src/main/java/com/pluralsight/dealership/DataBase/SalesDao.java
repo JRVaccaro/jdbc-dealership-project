@@ -1,11 +1,8 @@
-package com.pluralsight.DataBase;
+package com.pluralsight.dealership.DataBase;
 
-import com.yearup.dealership.models.SalesContract;
+import com.pluralsight.dealership.models.SalesContract;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 public class SalesDao {
     private DataSource dataSource;
