@@ -7,7 +7,7 @@ CREATE DATABASE car_dealership;
 -- Step 3: Use the database
 USE car_dealership;
 
--- Step 4: Create the tables
+-- Step 4: Create the tables`
 
 DROP TABLE IF EXISTS lease_contracts;
 DROP TABLE IF EXISTS sales_contracts;
