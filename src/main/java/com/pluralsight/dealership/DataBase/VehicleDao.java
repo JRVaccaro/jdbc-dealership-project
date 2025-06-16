@@ -123,7 +123,6 @@ public class VehicleDao {
         }
 
         public List<Vehicle> searchByYearRange ( int minYear, int maxYear){
-            // TODO: Implement the logic to search vehicles by year range
             List<Vehicle> vehicles = new ArrayList<>();
 
             try (Connection connection = dataSource.getConnection();
@@ -154,9 +153,35 @@ public class VehicleDao {
             return vehicles;
         }
 
-        public List<Vehicle> searchByColor (String color){
+        public List<Vehicle> searchByColor (String color) {
             // TODO: Implement the logic to search vehicles by color
-            return new ArrayList<>();
+            List<Vehicle> vehicles = new ArrayList<>();
+
+            try (Connection connection = dataSource.getConnection();
+                 PreparedStatement statement = connection.prepareStatement(
+                         "SELECT * FROM vehicles WHERE color = ?")) {
+                statement.setString(1, color);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        Vehicle vehicle = new Vehicle(
+                                resultSet.getString("VIN"),
+                                resultSet.getString("make"),
+                                resultSet.getString("model"),
+                                resultSet.getInt("year"),
+                                resultSet.getBoolean("sold"),
+                                resultSet.getString("color"),
+                                resultSet.getString("vehicleType"),
+                                resultSet.getInt("odometer"),
+                                resultSet.getDouble("price"));
+
+                        vehicles.add(vehicle);
+                    }
+
+                }
+            } catch (SQLException e){
+                e.printStackTrace();
+            }
+            return vehicles;
         }
 
         public List<Vehicle> searchByMileageRange ( int minMileage, int maxMileage){
