@@ -154,7 +154,6 @@ public class VehicleDao {
         }
 
         public List<Vehicle> searchByColor (String color) {
-            // TODO: Implement the logic to search vehicles by color
             List<Vehicle> vehicles = new ArrayList<>();
 
             try (Connection connection = dataSource.getConnection();
@@ -186,7 +185,34 @@ public class VehicleDao {
 
         public List<Vehicle> searchByMileageRange ( int minMileage, int maxMileage){
             // TODO: Implement the logic to search vehicles by mileage range
-            return new ArrayList<>();
+            List<Vehicle> vehicles = new ArrayList<>();
+
+            try (Connection connection = dataSource.getConnection();
+                 PreparedStatement statement = connection.prepareStatement(
+                         "SELECT * FROM vehicles WHERE odometer BETWEEN ? AND  ?")) {
+                statement.setInt(1, minMileage);
+                statement.setInt(2, maxMileage);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        Vehicle vehicle = new Vehicle(
+                                resultSet.getString("VIN"),
+                                resultSet.getString("make"),
+                                resultSet.getString("model"),
+                                resultSet.getInt("year"),
+                                resultSet.getBoolean("sold"),
+                                resultSet.getString("color"),
+                                resultSet.getString("vehicleType"),
+                                resultSet.getInt("odometer"),
+                                resultSet.getDouble("price"));
+
+                        vehicles.add(vehicle);
+                    }
+                }
+
+                } catch (SQLException e) {
+                e.printStackTrace();
+            }
+           return vehicles;
         }
 
         public List<Vehicle> searchByType (String type){
