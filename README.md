@@ -1,4 +1,4 @@
-# JDBC-Dealership-Project
+# JDBC-Dealership-Project 🚗
 
 ## Description of the Project
 
@@ -13,20 +13,40 @@ This is a simple Java console application designed to help a car dealership mana
 - Remove vehicles when they are sold
 
 The application uses a MySQL database to store dealership and vehicle data, loading and updating records through SQL queries
-![Class Diagram](path/to/your/class_diagram.png)
 
+## Interesting Code Snippet
+- statement.setDate(3, java.sql.Date.valueOf(leaseContract.getLeaseStart()));
+- statement.setDate(4, java.sql.Date.valueOf(leaseContract.getLeaseEnd()));
+
+These lines convert LocalDate objects (used in Java) into java.sql.Date so they can be stored in a SQL database. This was something I had to research and learn on my own during the project.
 
 ## User Stories
 
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
-
+- As a user, I want to add vehicles to the inventory so they can be sold or leased.
+- As a user, I want to remove vehicles from the inventory so that it keeps the inventory UTD.
+- As a user, I want to add a vehicle to the inventory so it can be listed for lease.
+- As a user, I want to save lease details, so that the lease agreement is stored.
+- As a user, I want to add a sales contract so that vehicle sales are properly recorded.
 
 ## Setup
 
-Instructions on how to set up and run the project using IntelliJ IDEA.
+- Main menu Options
+1. Search vehicles
+2. Add a vehicle
+3. Add a contract
+4. Remove a vehicle
+5. Exit
+
+- Selecting search vehicles shows a submenu with these options
+1. By price range
+2. By make/model
+3. By year range
+4. By color
+5. By mileage range
+6. By type
+7. Back to Main Menu
 
 ### Prerequisites
-
 - IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).
 - Java SDK: Make sure Java SDK is installed and configured in IntelliJ.
 
@@ -41,38 +61,29 @@ Follow these steps to get your application running within IntelliJ IDEA:
 5. Right-click on the file and select 'Run 'YourMainClassName.main()'' to start the application.
 
 ## Technologies Used
-
-- Java: Mention the version you are using.
-- Any additional libraries or frameworks used in the project.
+- Java 17
+- Intellij IDEA
+- SQL Workbench
 
 ## Demo
-
-Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
-
-![Application Screenshot](path/to/your/screenshot.png)
+- ![jdbc gif - Made with Clipchamp.gif](Demo%20Gif/jdbc%20gif%20-%20Made%20with%20Clipchamp.gif)
 
 ## Future Work
-
-Outline potential future enhancements or functionalities you might consider adding:
-
-- Additional feature to be developed.
-- Improvement of current functionalities.
+- Improve error messages
+- Save more data to the database
+- Create a nicer menu
 
 ## Resources
-
 - https://mkyong.com/jdbc/how-to-insert-date-value-in-preparedstatement/
 - https://www.baeldung.com/java-convert-localdate-sql-date
+- https://github.com/RayMaroun
 
 
 ## Team Members
-
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
+- Julianna Vaccaro: Developed this project as part of a Java programming course to apply concepts such as JDBC database access, user input handling, object-oriented design, and menu-driven console applications.
 
 ## Thanks
 
-Express gratitude towards those who provided help, guidance, or resources:
-
-- Thank you to [Mentor's Name] for continuous support and guidance.
-- A special thanks to all teammates for their dedication and teamwork.
+- Thank you to my instructor, Raymond, for providing the class diagram and for your continuous support and guidance throughout the project.
+- Thank you to my peers for always being willing to listen and support me when I needed it.
  
